@@ -45,10 +45,15 @@ class GameProvider extends ChangeNotifier {
     } catch (e) {
       debugPrint('error in fetching game list: $e');
     }
+
+    debugPrint('res return : $res');
+
     if (page == '1') {
       gameList = res['results'];
-    } else {
-      gameList.addAll(res['results']);
+    } else if (res['results'] != null) {
+      if (res['results'].isNotEmpty) {
+        gameList.addAll(res['results']);
+      }
     }
     fetchGameList = false;
     notifyListeners();

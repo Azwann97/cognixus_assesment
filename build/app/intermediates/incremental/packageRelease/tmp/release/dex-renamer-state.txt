@@ -1,0 +1,4 @@
+#Mon Oct 23 13:00:03 MYT 2023
+base.0=/Users/macintosh/Documents/GitHub/cognixus_assesment/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

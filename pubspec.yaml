@@ -41,6 +41,9 @@ dependencies:
   flutter_html: ^3.0.0-beta.2
   sliver_tools: ^0.2.12
   lazy_load_scrollview: ^1.3.0
+  # flutter_date_range_picker: ^0.0.14
+  custom_date_range_picker: ^1.0.10
+  intl: ^0.18.1
 
 dev_dependencies:
   flutter_test:
