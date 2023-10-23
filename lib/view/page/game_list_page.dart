@@ -70,18 +70,18 @@ class _GameListPageState extends State<GameListPage> {
                                 backgroundColor: Colors.white,
                                 primaryColor: Colors.black,
                                 onApplyClick: (start, end) {
+                                  debugPrint('start date : ${DateFormat("yyyy-MM-dd").format(start!)}, end date: ${DateFormat("yyyy-MM-dd").format(end!)}');
+                                  Provider.of<GameProvider>(context, listen: false).getGameList(page: currentPage.toString(), dateRange: "${DateFormat("yyyy-MM-dd").format(start)},${DateFormat("yyyy-MM-dd").format(end)}", changeDateRange: (start != startDate || end != endDate));
+
                                   setState(() {
                                     endDate = end;
                                     startDate = start;
                                   });
-
-                                  debugPrint('start date : ${DateFormat("yyyy-MM-dd").format(startDate!)}, end date: ${DateFormat("yyyy-MM-dd").format(endDate!)}');
-                                  Provider.of<GameProvider>(context, listen: false).getGameList(page: currentPage.toString(), dateRange: "${DateFormat("yyyy-MM-dd").format(startDate!)},${DateFormat("yyyy-MM-dd").format(endDate!)}");
                                 },
                                 onCancelClick: () {
                                   setState(() {
-                                    endDate = null;
-                                    startDate = null;
+                                    endDate = endDate;
+                                    startDate = startDate;
                                   });
                                 },
                               );

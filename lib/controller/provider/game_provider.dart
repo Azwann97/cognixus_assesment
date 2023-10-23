@@ -35,7 +35,7 @@ class GameProvider extends ChangeNotifier {
   bool get isFetchingGameList => fetchGameList;
   bool get isFetchingGameDetails => fetchGameDeets;
 
-  getGameList({required String page, required String dateRange}) async {
+  getGameList({required String page, required String dateRange, bool? changeDateRange}) async {
     fetchGameList = true;
     notifyListeners();
 
@@ -48,7 +48,7 @@ class GameProvider extends ChangeNotifier {
 
     debugPrint('res return : $res');
 
-    if (page == '1') {
+    if (page == '1' || changeDateRange == true) {
       gameList = res['results'];
     } else if (res['results'] != null) {
       if (res['results'].isNotEmpty) {
