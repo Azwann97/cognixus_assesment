@@ -49,7 +49,7 @@ class GameProvider extends ChangeNotifier {
     debugPrint('res return : $res');
 
     if (page == '1' || changeDateRange == true) {
-      gameList = res['results'];
+      gameList = res['results'] ?? [];
     } else if (res['results'] != null) {
       if (res['results'].isNotEmpty) {
         gameList.addAll(res['results']);
